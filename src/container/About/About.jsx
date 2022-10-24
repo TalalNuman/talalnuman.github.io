@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import { urlFor, client } from "../../client";
+import { AppWrap } from "../../wrapper";
 
 import "./About.scss";
 
-const abouts = [
+const arr = [
   {
     title: "Web Developement",
     description:
@@ -32,7 +33,7 @@ const abouts = [
   },
 ];
 
-export default function About() {
+function About() {
   const [abouts, setAbouts] = useState([]);
   useEffect(() => {
     const query = '*[_type == "abouts"]';
@@ -47,7 +48,7 @@ export default function About() {
         means <span>Good Business</span>
       </h2>
       <div className="app__profiles">
-        {abouts.map((about, index) => (
+        {arr.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -55,7 +56,8 @@ export default function About() {
             className="app__profiles-item"
             key={about.title + index}
           >
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
+            <img src={about.img} alt={about.title} />
+            {/* <img src={urlFor(about.imgUrl)} alt={about.title} /> */}
             <h2 className="bold-text">{about.title}</h2>
             <p className="p-text"> {about.description}</p>
           </motion.div>
@@ -64,3 +66,4 @@ export default function About() {
     </>
   );
 }
+export default AppWrap(About, "about");

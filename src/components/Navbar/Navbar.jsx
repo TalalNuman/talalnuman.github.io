@@ -28,9 +28,9 @@ function Navbar() {
 
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            // whileInView={{ x: [300, 0] }}
+            animate={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <HiX onClick={() => setToggle(false)} />
             <ul className="app__navbar-links">
