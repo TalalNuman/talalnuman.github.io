@@ -1,6 +1,12 @@
 import React from "react";
 import { BsTwitter, BsLinkedin, BsInstagram, BsFacebook } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 function SocialMedia() {
   return (
     <div className="app__social">
@@ -20,8 +26,9 @@ function SocialMedia() {
         </a>
       </div>
       <div>
-        
-        <FaFacebook />
+        <a href="https://www.github.com/talalnuma" target={"_blank"}>
+          <FaGithub />
+        </a>
       </div>
     </div>
   );
